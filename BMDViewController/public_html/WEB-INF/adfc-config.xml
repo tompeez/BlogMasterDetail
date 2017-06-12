@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
+  <view id="EmpTable">
+    <page>/EmpTable.jspx</page>
+  </view>
+  <view id="EmpDetail">
+    <page>/EmpDetail.jspx</page>
+  </view>
+  <task-flow-call id="pageNavBTF">
+    <task-flow-reference>
+      <document>/WEB-INF/pageNavBTF.xml</document>
+      <id>pageNavBTF</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">index</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome id="__5">pageNav</from-outcome>
+      <to-activity-id id="__3">EmpTable</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome id="__23">pageFragmentNav</from-outcome>
+      <to-activity-id id="__21">pageNavBTF</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">EmpTable</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome id="__10">detail</from-outcome>
+      <to-activity-id id="__9">EmpDetail</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id id="__12">EmpDetail</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome id="__15">master</from-outcome>
+      <to-activity-id id="__13">EmpTable</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__16">
+    <from-activity-id id="__17">*</from-activity-id>
+    <control-flow-case id="__19">
+      <from-outcome id="__20">index</from-outcome>
+      <to-activity-id id="__18">index</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

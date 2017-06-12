@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="de.hahn.blog.renderer.model.BMDAppModule">
+      <AppModuleConfig name="BMDAppModuleLocal" ApplicationName="de.hahn.blog.renderer.model.BMDAppModule" DeployPlatform="LOCAL" jbo.project="de.hahn.blog.renderer.model.BMDModel">
+         <Security AppModuleJndiName="de.hahn.blog.renderer.model.BMDAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRConnDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="BMDAppModuleShared" ApplicationName="de.hahn.blog.renderer.model.BMDAppModule" DeployPlatform="LOCAL" jbo.project="de.hahn.blog.renderer.model.BMDModel">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="de.hahn.blog.renderer.model.BMDAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRConnDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
